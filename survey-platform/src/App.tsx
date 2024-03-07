@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { Button } from './components/ui/button'
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/ui/card'
+import { TableHeader, TableRow, TableHead, TableBody } from './components/ui/table'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
+   <div>
+    <h1 style={{textAlign:'center'}}>Projects</h1>
+    <div style={{border:"solid black 2px", padding: "6§0px"}}>
+
+    <TableHeader>
+        <TableRow>
+          <TableHead className="w-[100px]">Name | </TableHead>
+          <TableHead> Location | </TableHead>
+          <TableHead> Actions | </TableHead>
+        </TableRow>
+      </TableHeader>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <Card className="w-[350px]">
+      <CardHeader>
+        <CardTitle>Create project</CardTitle>
+      </CardHeader>
+      <CardContent>
+     <p>Let’s get started on bringing your ideas to life.</p>
+      </CardContent>
+      <CardFooter className="flex justify-between">
+        <Button> Create</Button>
+      </CardFooter>
+    </Card>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <Button>Click me</Button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      
+
+    </div>
+    
+    
+    <p></p>
+
+   </div>
     </>
   )
 }
